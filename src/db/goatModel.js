@@ -4,7 +4,7 @@ import { collection } from "./connect"
 export const insertOne = async (goat) => {
   const goats = await collection('goats');
   return await goats.insertOne(goat);
-}
+};
 
 export const getAll = async () => {
   const goats = await collection('goats');

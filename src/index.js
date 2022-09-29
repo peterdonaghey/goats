@@ -5,14 +5,11 @@ import * as db from './db/connect';
 const app = express();
 const port = 5001;
 
+app.use(express.json())
+
 Object.values(routes).forEach((route) => {
   console.log(route);
   app[route.method](route.path, route.handler);
-});
-
-app.get('/test', (req, res) => {
-  res.status(200);
-  res.send({ message: 'it worked!'})
 });
 
 const DB_URL = 'mongodb://127.0.0.1:27017';

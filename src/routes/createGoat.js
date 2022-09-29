@@ -1,13 +1,13 @@
-import * as goat from '../db/goatModel';
+import * as Goat from '../db/goatModel';
 
-export const creategoat = {
+export const createGoat = {
   method: 'post',
   path: '/goat',
   handler: async (req, res) => {
-    const newgoat = req.body.goat;
-    const { insertedId } = await goat.insertOne(newgoat);
+    const newGoat = req.body.goat;
+    const { insertedId } = await Goat.insertOne(newGoat);
 
-    const goats = await goat.getAll();
+    const goats = await Goat.getAll();
     res.status(200);
     res.send({
       goats,
