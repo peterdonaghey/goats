@@ -1,11 +1,13 @@
 import express from "express";
 import * as routes from './routes';
 import * as db from './db/connect';
+import cors from 'cors';
 
 const app = express();
 const port = 5001;
 
 app.use(express.json())
+app.use(cors());
 
 Object.values(routes).forEach((route) => {
   console.log(route);
